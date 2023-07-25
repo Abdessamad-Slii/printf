@@ -86,18 +86,18 @@ int print_non_printable(va_list types, char buffer[],
 
 		i++;
 	}
-OBOBOB
+
 	buffer[i + offset] = '\0';
 
 	return (write(1, buffer, i + offset));
 }
-OBOBOB
+
 /************************* PRINT REVERSE *************************/
 /**
  * print_reverse - Prints reverse string.
-OBOBOB * @types: Lista of arguments
+ * @types: Lista of arguments
  * @buffer: Buffer array to handle print
-OBOBOB * @flags:  Calculates active flags
+ * @flags:  Calculates active flags
  * @width: get width
  * @precision: Precision specification
  * @size: Size specifier
@@ -108,20 +108,20 @@ int print_reverse(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char *str;
-OBOBOB	int i, count = 0;
+	int i, count = 0;
 
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
-OBOBOB	UNUSED(size);
+	UNUSED(size);
 
 	str = va_arg(types, char *);
 
 	if (str == NULL)
-OBOBOB	{
+	{
 		UNUSED(precision);
 
-OBOBOB		str = ")Null(";
+		str = ")Null(";
 	}
 	for (i = 0; str[i]; i++)
 		;
@@ -160,20 +160,20 @@ int print_rot13string(va_list types, char buffer[],
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
-OBOBOB	UNUSED(precision);
+	UNUSED(precision);
 	UNUSED(size);
 
 	if (str == NULL)
 		str = "(AHYY)";
-OBOBOB	for (i = 0; str[i]; i++)
+	for (i = 0; str[i]; i++)
 	{
-OBOBOB		for (j = 0; in[j]; j++)
+		for (j = 0; in[j]; j++)
 		{
 			if (in[j] == str[i])
-OBOBOB			{
+			{
 				x = out[j];
 				write(1, &x, 1);
-OBOBOB				count++;
+				count++;
 				break;
 			}
 		}
